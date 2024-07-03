@@ -29,7 +29,10 @@ phases:
     commands:
       - echo Pushing the Docker image...
       - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME
-
+      - export REPOSITORY_URI = $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME
+      - cat deployment.yaml
+      - echo Applying deployment...
+      - kubectl apply -f deployment.yaml
 artifacts:
   files:
     - '**/*'
