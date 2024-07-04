@@ -33,6 +33,7 @@ phases:
       - echo Pushing the Docker image...
       - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME
       - cat deployment.yaml
+      - kubectl config view 
       - echo Applying deployment...
       - kubectl apply -f deployment.yaml
 artifacts:
