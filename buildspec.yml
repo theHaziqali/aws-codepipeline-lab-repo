@@ -35,6 +35,7 @@ phases:
       - cat deployment.yaml
       - echo Applying deployment...
       - kubectl config current-context
+      - kubectl config use-context my-eks-cluster
       - kubectl apply -f deployment.yaml
 artifacts:
   files:
