@@ -35,7 +35,7 @@ phases:
       - cat deployment.yaml
       - kubectl config view 
       - echo Applying deployment...
-      - $ kubectl get svc
+      - kubectl get svc
       - aws eks update-kubeconfig --name my-eks-cluster --region us-east-1
       - kubectl apply -f deployment.yaml
 artifacts:
