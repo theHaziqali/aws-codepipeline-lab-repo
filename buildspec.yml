@@ -34,6 +34,7 @@ phases:
       - cat deployment.yaml
       - kubectl config view 
       - echo Applying deployment...
+      - kubectl get pods --all-namespaces
       - kubectl version 
       -  ~/.local/bin/kubectl apply -f deployment.yaml
 artifacts:
